@@ -26,6 +26,7 @@
         android:layout_toEndOf="@+id/ivPoster"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        android:textStyle="bold"
         tools:text="Godzilla vs Kong" />
 
     <TextView
@@ -36,6 +37,18 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/ivPoster"
-        android:textColor="#FFFFFF"
+        android:textColor="#A5A5A5"
         tools:text="In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages" />
+
+    <TextView
+        android:id="@+id/tvRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/ivPoster"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="#000000"
+        android:textColor="#FFFFFF"
+        tools:text="8.3/10" />
+
 </RelativeLayout>

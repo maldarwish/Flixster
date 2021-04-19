@@ -9,16 +9,20 @@ import java.util.List;
 
 public class Movie {
 
+    String date;
     String backdropPath;
     String posterPath;
     String title;
     String overView;
+    double rating;
 
     public Movie(JSONObject jsonObject) throws JSONException {
         backdropPath = jsonObject.getString("backdrop_path");
         posterPath = jsonObject.getString("poster_path");
         title = jsonObject.getString("title");
         overView = jsonObject.getString("overview");
+        rating = jsonObject.getDouble("vote_average");
+        date = jsonObject.getString("release_date");
     }
 
     public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
@@ -45,5 +49,13 @@ public class Movie {
 
     public String getOverView() {
         return overView;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public String getDate() {
+        return date.substring(0, 4);
     }
 }

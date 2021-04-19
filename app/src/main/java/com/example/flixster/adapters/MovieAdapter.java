@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -54,17 +55,20 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         TextView tvTitle;
         TextView tvOverview;
         ImageView ivPoster;
+        TextView tvRating;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvOverview = itemView.findViewById(R.id.tvOverview);
             ivPoster = itemView.findViewById(R.id.ivPoster);
+            tvRating = itemView.findViewById(R.id.tvRating);
         }
 
         public void bind(Movie movie) {
-            tvTitle.setText(movie.getTitle());
+            tvTitle.setText(movie.getTitle() + " (" + movie.getDate() + ")");
             tvOverview.setText(movie.getOverView());
+            tvRating.setText(movie.getRating() + "/10");
 
             String imageURL;
 
